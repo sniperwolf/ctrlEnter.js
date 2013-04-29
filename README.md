@@ -5,7 +5,7 @@ ctrlEnter.js
 
 Simply jQuery plugin to submit any form with **CTRL+Enter** shortcut.
 
-<img src="http://media.tumblr.com/f0251dd760d3d629f46896d7c15e3acb/tumblr_inline_mm083x6SHR1ravf1e.png"/>
+<img src="http://www.sparkblog.org/download/ctrlEnter.png" />
 
 Simply call `$('#fooMsgField').ctrlEnter("#fooInputSubmit");` to implement it.
 
