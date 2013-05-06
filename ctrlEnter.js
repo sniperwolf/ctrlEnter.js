@@ -33,7 +33,7 @@ $.fn.ctrlEnter = function (btn, fn) {
   }
 
   // CTRL+Enter handler
-  that.bind("keydown", function (e) {
+  that.on("keydown", function (e) {
     // CTRL && Enter
     if(e.ctrlKey && e.keyCode === 13) {
       e.preventDefault();
@@ -42,11 +42,11 @@ $.fn.ctrlEnter = function (btn, fn) {
   });
 
   // Maintain classic performAction for submit form
-  btn.bind("click", performAction);
+  btn.on("click", performAction);
 };
 
 // jQuery ready
-jQuery(document).on("ready", function () {
+$(document).on("ready", function () {
   // Call ctrlEnter with "#msg"
   $("#msg").ctrlEnter("button", function () {
     $("<p></p>").append(this.val().replace(/\n/g, "<br />")).appendTo(document.body);
