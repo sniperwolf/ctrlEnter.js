@@ -17,7 +17,7 @@ You can find a working example [here](http://codepen.io/sniperwolf/pen/IACqh/).
 * Used closure to wrap plugin and example code;
 * Now we don't break the chain;
 * Changing some private variable name;
-* Updated CodePen example;
+* Updated [CodePen example](http://codepen.io/sniperwolf/pen/IACqh/ "CodePen example");
 * Add minified version (Google Closure Compiler);
 
 ### 1.1 - [May 06, 2013]
