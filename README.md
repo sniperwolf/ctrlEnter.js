@@ -22,8 +22,8 @@ You can find a working example [here](http://codepen.io/sniperwolf/pen/IACqh/).
 
 ### 1.1 - [May 06, 2013]
 
-        - Used `on` instead of `bind`;
+* Used `on` instead of `bind`;
 
 ### 1.0 - [Apr 29, 2013]
 
-        - First Commit;
+* First Commit;
