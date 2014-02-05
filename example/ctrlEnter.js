@@ -1,5 +1,5 @@
 // ctrlEnter.js
-//    2013-04-29
+//    2014-02-05
 
 // Copyright (c) 2013 Fabrizio Fallico
 
@@ -21,35 +21,43 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// ctrlEnter plugin
-$.fn.ctrlEnter = function (btn, fn) {
-  // Create var
-  var that  = $(this);
-      btn   = $(btn);
+(function ($, window, document) {
+    // ctrlEnter plugin
+    $.fn.ctrlEnter = function (css_sel, fn) {
+        // Create var
+        var that  = $(this);
 
-  // Generic performAction
-  function performAction(e) {
-    fn.call(that, e);
-  }
+        // jQueryfy CSS Selector
+        css_sel   = $(css_sel);
 
-  // CTRL+Enter handler
-  that.on("keydown", function (e) {
-    // CTRL && Enter
-    if(e.ctrlKey && e.keyCode === 13) {
-      e.preventDefault();
-      performAction(e);
-    }
-  });
+        // Generic userCallback
+        function userCallback(e) {
+            fn.call(that, e);
+        }
 
-  // Maintain classic performAction for submit form
-  btn.on("click", performAction);
-};
+        // CTRL+Enter handler
+        that.on('keydown', function (e) {
+            // CTRL && Enter
+            if (e.ctrlKey && e.keyCode === 13) {
+                e.preventDefault();
+                userCallback(e);
+            }
+        });
+
+        // Maintain classic userCallback for submit form
+        css_sel.on("click", userCallback);
+
+        // For chaining
+        return this;
+    };
+})(window.jQuery, window, document);
+
 
 // jQuery ready
-$(document).on("ready", function () {
-  // Call ctrlEnter with "#msg"
-  $("#msg").ctrlEnter("button", function () {
-    $("<p></p>").append(this.val().replace(/\n/g, "<br />")).appendTo(document.body);
-    this.val("");
-  });
-});
+// (function ($, window, document) {
+//     // Call ctrlEnter with "#msg"
+//     $("#msg").ctrlEnter("button", function () {
+//         $("<p></p>").append(this.val().replace(/\n/g, "<br />")).appendTo(document.body);
+//         this.val('');
+//     });
+// })(window.jQuery, window, document);
