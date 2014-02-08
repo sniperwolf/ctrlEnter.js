@@ -27,3 +27,5 @@ You can find a working example [here](http://codepen.io/sniperwolf/pen/IACqh/).
 ### 1.0 - [Apr 29, 2013]
 
 * First Commit;
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sniperwolf/ctrlenter.js/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
